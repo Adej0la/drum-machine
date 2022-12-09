@@ -11,12 +11,12 @@ class Controls extends Component {
 
   render() {
     return (
-      <>
+      <div className="container">
         <PowerSwitch />
         <Display />
         <VolumeControl />
         {/* <BankSwitch /> */}
-      </>
+      </div>
     );
   }
 }

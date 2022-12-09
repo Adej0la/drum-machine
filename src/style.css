@@ -1,0 +1,15 @@
+#root {
+    display: grid;
+    place-content: center;
+}
+.grid {
+    min-width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+}
+
+.drum-pad {
+    padding: 1em;
+}
+

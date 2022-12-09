@@ -1,9 +1,9 @@
 import { Component } from "react";
-import Controls from "./Controls";
-import PadGroup from "./PadGroup";
-import "./App.css";
+import Controls from "./components/Controls";
+import PadGroup from "./components/PadGroup";
+import "./style.css";
 
-class App extends Component {
+class DrumMachine extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -18,4 +18,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default DrumMachine;
