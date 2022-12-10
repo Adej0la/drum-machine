@@ -21,6 +21,7 @@ const Button = (props) => {
     if (props.isActive) {
       audioClip.currentTime = 0;
       audioClip.play();
+      audioClip.volume = props.volume / 100;
       props.displayHandler(description);
     }
   };

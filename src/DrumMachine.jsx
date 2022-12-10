@@ -10,25 +10,34 @@ class DrumMachine extends Component {
       isBankOne: true,
       isActive: true,
       display: "",
+      volume: 50,
     };
   }
 
-  powerOnHandler() {
+  powerOnHandler(e) {
     this.setState({
-      isActive: !this.state.isActive,
-        display: this.state.isActive ? 'On' : 'Off'
+      isActive: e.target.checked,
+      display: e.target.checked ? "On" : "Off",
     });
   }
 
-  soundBankHandler() {
+  soundBankHandler(e) {
     this.setState({
-      isBankOne: !this.state.isBankOne,
+      isBankOne: e.target.checked,
+      display: e.target.checked ? "Kit 2 loaded" : "Kit 1 loaded",
     });
   }
 
   displayHandler(string) {
     this.setState({
       display: string,
+    });
+  }
+
+  volumeHandler(e) {
+    this.setState({
+      volume: e.target.value,
+      display: e.target.value,
     });
   }
   render() {
@@ -38,11 +47,16 @@ class DrumMachine extends Component {
           isActive={this.state.isActive}
           isBankOne={this.state.isBankOne}
           displayHandler={this.displayHandler.bind(this)}
+          volume={this.state.volume}
         />
         <Controls
           handlePowerSwitch={this.powerOnHandler.bind(this)}
           handleBankSwitch={this.soundBankHandler.bind(this)}
+          handleVolume={this.volumeHandler.bind(this)}
           display={this.state.display}
+          volume={this.state.volume}
+          isActive={this.state.isActive}
+          isBankOne={this.state.isBankOne}
         />
       </main>
     );

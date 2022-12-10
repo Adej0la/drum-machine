@@ -12,10 +12,10 @@ class Controls extends Component {
   render() {
     return (
       <div className="container">
-        <PowerSwitch handlePowerSwitch={this.props.handlePowerSwitch} />
+        <PowerSwitch handlePowerSwitch={this.props.handlePowerSwitch} isActive={this.props.isActive} />
         <Display display={this.props.display} />
-        <VolumeControl />
-        <BankSwitch handleBankSwitch={this.props.handleBankSwitch} />
+        <VolumeControl volume={this.props.volume} handleVolume={this.props.handleVolume} />
+        <BankSwitch handleBankSwitch={this.props.handleBankSwitch} isBankOne={this.props.isBankOne}/>
       </div>
     );
   }

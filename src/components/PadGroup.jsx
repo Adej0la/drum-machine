@@ -18,6 +18,7 @@ class PadGroup extends Component {
               isActive={this.props.isActive}
               key={pad.key}
               displayHandler={this.props.displayHandler}
+              volume={this.props.volume}
             />
           );
         })}
