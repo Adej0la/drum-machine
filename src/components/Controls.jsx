@@ -2,20 +2,20 @@ import { Component } from "react";
 import PowerSwitch from "./PowerSwitch";
 import Display from "./Display";
 import VolumeControl from "./VolumeControl";
+import BankSwitch from "./BankSwitch";
 
 class Controls extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {
     return (
       <div className="container">
-        <PowerSwitch />
-        <Display />
+        <PowerSwitch handlePowerSwitch={this.props.handlePowerSwitch} />
+        <Display display={this.props.display} />
         <VolumeControl />
-        {/* <BankSwitch /> */}
+        <BankSwitch handleBankSwitch={this.props.handleBankSwitch} />
       </div>
     );
   }

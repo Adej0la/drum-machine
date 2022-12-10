@@ -1,9 +1,9 @@
 const VolumeControl = (props) => {
-    return(
-        <>
-        <input type=""/>
-        </>
-    )
-}
+  return (
+    <>
+      <input type="range" />
+    </>
+  );
+};
 
-export default VolumeControl
+export default VolumeControl;

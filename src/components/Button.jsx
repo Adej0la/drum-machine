@@ -17,8 +17,12 @@ const Button = (props) => {
 
   const playClip = () => {
     const audioClip = document.getElementById(props.pad.key);
-    audioClip.currentTime = 0;
-    audioClip.play();
+    const description = props.pad.description;
+    if (props.isActive) {
+      audioClip.currentTime = 0;
+      audioClip.play();
+      props.displayHandler(description);
+    }
   };
   return (
     <button className="drum-pad" onClick={playClip}>

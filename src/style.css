@@ -1,15 +1,52 @@
 #root {
-    display: grid;
-    place-content: center;
+  display: grid;
+  place-content: center;
 }
 .grid {
-    min-width: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5em;
+  min-width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
 }
 
 .drum-pad {
-    padding: 1em;
+  padding: 1em;
 }
 
+.toggle {
+  appearance: none;
+  /*padding: 1em;*/
+  width: 60px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.toggle::before {
+  content: "";
+  width: 3em;
+  height: 1.65em;
+  background-color: pink;
+  margin-inline-end: 0.5em;
+  border-radius: 3em;
+}
+
+.toggle::after {
+  position: absolute;
+  content: "";
+  width: 1.35em;
+  height: 1.35em;
+  background-color: green;
+  border-radius: 3em;
+  left: 0.25em;
+}
+
+.toggle:checked::after {
+  transform: translateX(100%) translateX(-0.25em);
+}
+
+.toggle:focus-visible::before {
+  outline: 2.5px solid black;
+}

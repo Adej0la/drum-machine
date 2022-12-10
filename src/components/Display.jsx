@@ -1,5 +1,5 @@
 const Display = (props) => {
-  return <div id={"display"}></div>;
+  return <div id="display">{props.display}</div>;
 };
 
 export default Display;
