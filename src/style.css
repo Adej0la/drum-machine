@@ -2,11 +2,17 @@
   display: grid;
   place-content: center;
 }
+#drum-machine {
+    display: flex;
+}
 .grid {
-  min-width: 50%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5em;
+  width: 50%;
+}
+.grid > * {
+    float: left;
+}
+.grid > * + * {
+    margin-inline-start: 1em;
 }
 
 .drum-pad {
@@ -15,7 +21,6 @@
 
 .toggle {
   appearance: none;
-  /*padding: 1em;*/
   width: 60px;
   cursor: pointer;
   position: relative;
@@ -26,9 +31,9 @@
 
 .toggle::before {
   content: "";
-  width: 3em;
-  height: 1.65em;
-  background-color: pink;
+  width: 3.5em;
+  height: 1.85em;
+  background-color: grey;
   margin-inline-end: 0.5em;
   border-radius: 3em;
 }
@@ -38,15 +43,23 @@
   content: "";
   width: 1.35em;
   height: 1.35em;
-  background-color: green;
+  background-color: white;
   border-radius: 3em;
   left: 0.25em;
 }
 
 .toggle:checked::after {
-  transform: translateX(100%) translateX(-0.25em);
+  transform: translateX(100%) translateX(-0.05em);
 }
 
 .toggle:focus-visible::before {
   outline: 2.5px solid black;
+}
+
+#display {
+    background-color: grey;
+    text-align: center;
+}
+.container > * + * {
+    margin-block-start: 1em;
 }

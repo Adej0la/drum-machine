@@ -9,8 +9,8 @@ class DrumMachine extends Component {
     this.state = {
       isBankOne: true,
       isActive: true,
-      display: "",
-      volume: 50,
+      display: String.fromCharCode(160),
+      volume: 0.5,
     };
   }
 
@@ -37,7 +37,7 @@ class DrumMachine extends Component {
   volumeHandler(e) {
     this.setState({
       volume: e.target.value,
-      display: e.target.value,
+      display: 'Volume: ' + Math.floor(e.target.value * 100),
     });
   }
   render() {
